@@ -22,4 +22,4 @@ quick-sharun /usr/bin/srb2
 quick-sharun --make-appimage
 
 # test the final app
-quick-sharun --test ./dist/*.AppImage
+quick-sharun --simple-test ./dist/*.AppImage
