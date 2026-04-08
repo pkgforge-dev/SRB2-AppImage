@@ -10,7 +10,7 @@ pacman -Syu --noconfirm \
     glu        \
     libdecor   \
     libopenmpt \
-    sdl2_mixer \
+    sdl2_mixer
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
