@@ -38,7 +38,7 @@ REPO="https://github.com/STJr/SRB2"
 
 RELEASE="$(curl -fsSL https://api.github.com/repos/STJr/SRB2/releases/latest)"
 TAG="$(echo "$RELEASE" | grep '"tag_name"' | head -1 | cut -d '"' -f 4)"
-FULL_ZIP_URL="$(echo "$RELEASE" | grep '"browser_download_url"' | grep -- '-Full\.zip' | head -1 | cut -d '"' -f 4)"
+FULL_ZIP="$(echo "$RELEASE" | grep '"browser_download_url"' | grep -- '-Full\.zip' | head -1 | cut -d '"' -f 4)"
 git clone --branch "$TAG" "$REPO" ./SRB2
 VERSION="${TAG#SRB2_release_}"
 echo "$VERSION" > ~/version
