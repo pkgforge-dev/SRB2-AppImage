@@ -8,7 +8,7 @@ export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=https://git.do.srb2.org/STJr/SRB2/-/raw/next/srb2.png?ref_type=heads
+export ICON=https://raw.githubusercontent.com/STJr/SRB2/refs/heads/master/srb2.png
 export DESKTOP=/usr/share/applications/srb2-opengl.desktop
 export APPNAME="Sonic Robo Blast 2"
 export STARTUPWMCLASS=srb2
