@@ -8,6 +8,7 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     glu        \
+    libgme     \
     libopenmpt \
     miniupnpc  \
     sdl2_mixer
