@@ -38,17 +38,16 @@ curl -L -o SRB2-v2215-Full.zip \
 
 mkdir -p ./AppDir/bin
 mkdir -p ./AppDir/share/games/SRB2
-bsdtar -xvf SRB2-v2215-Full.zip -C ./AppDir/share/games/SRB2
+bsdtar -xvf SRB2-v2215-Full.zip 
+models.dat {music,srb2,zones,characters}.pk3 -C ./AppDir/share/games/SRB2
+if test -f "patch.pk3"; then install -m644 patch.pk3 ./AppDir/share/games/SRB2; fi
 
 cd ./SRB2/src
+# make comptime.sh optional
+sed 's/^comptime\.c ::/comptime.c :/' -i Makefile
+# use better version string
+sed 's/-DCOMPVERSION//' -i Makefile
+sed 's/illegal/AUR/' -i comptime.c
 
-export CXXFLAGS="${CXXFLAGS:-} -Wp,-U_GLIBCXX_ASSERTIONS"
-cmake -G Ninja -B build \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_C_FLAGS="-g1 -O3" \
-    -DCMAKE_CXX_FLAGS=-"g1 -O3 -fpermissive" \
-    -DSRB2_CONFIG_DEV_BUILD=OFF \
-    -DSRB2_SDL2_EXE_NAME=ringracers \
-    -DACSVM_INSTALL_LIB=OFF
-cmake --build build -j$(nproc)
-mv -v build/bin/ringracers ../AppDir/bin
+make LINUX64=1 NOUPX=1 NOVERSION=1 -j$(nproc)
+mv -v bin/lsdl2srb2 ../../AppDir/bin/srb2
