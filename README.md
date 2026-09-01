@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/SRB2-AppImage)](https://github.com/pkgforge-dev/SRB2-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://git.do.srb2.org/STJr/SRB2/-/raw/next/srb2.png?ref_type=heads" width="128" />
+  <img src="https://raw.githubusercontent.com/STJr/SRB2/refs/heads/master/srb2.png" width="128" />
 </p>
 
 
